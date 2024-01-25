@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-
+import './form.css';
 const Form = () => {
  
      const[modalIsOpen,setModalIsOpen]=useState(false);
      const [username, setUsername] = useState('');
      const [email, setEmail] = useState('');
-     const openModal=()=>{
+     function openModal(){
       setModalIsOpen(true);
      };
      const closeModal=()=>{
@@ -17,16 +17,18 @@ const Form = () => {
       console.log( { username, email });
       setUsername('');
       setEmail('');
-      closeModal();
      };
   
 return (
     <div>
       <button onClick={openModal}>Student Registration Form</button>
-    <Modal isOpen={modalIsOpen} 
+       <Modal isOpen={modalIsOpen} 
     onRequestClose={closeModal} 
     contentLabel="Student Registration Modal"   
     ariaHideApp={false}
+    className="modal" 
+     overlayClassName="modal-overlay"
+    shouldCloseOnOverlayClick={false} 
     >
     <form onSubmit={handleFormSubmit}>
       <label>
@@ -48,10 +50,10 @@ return (
       </label>
       <br />
       <button type="submit">Submit</button>
+      <button onClick={closeModal}>Close</button>
     </form>
-    </Modal>
+    </Modal> 
     </div>
   );
-};
-
-export default Form;
+};      
+export default Form; 
