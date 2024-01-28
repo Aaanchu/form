@@ -7,12 +7,49 @@
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
   }
-  
+  .btn{
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5%;
+    margin-right: 50px;
+
+    &:hover{
+      background-color: red;
+      color: white;
+    }
+  }
   .modal {
+    /* width: 15%; */
     background: white;
     padding: 20px;
     border-radius: 5px;
   }
-  
+input{
+  margin-bottom: 30px;
+}
+
+@media (max-width: 568px) {
+  .msg{
+    font-size: small;
+  }
+  .modal{
+    width: 50%;
+    height: 90%;
+  }
+  .form {
+    padding: 0px; 
+  }
+  input{
+    margin-bottom: 0px;
+  }
+  label {
+    display: block; 
+  }
+  .btn{
+    margin-right: 36px;
+    padding: 2.5px 2.5px;
+    font-size: small;
+  }
+}
